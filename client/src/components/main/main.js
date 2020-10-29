@@ -47,8 +47,7 @@ const Main = () => {
 
   return <div>
     <div>
-      {!gameStart ? welcomeScreen() : triviaScreen()}
-      {/* <TriviaRound /> */}
+      {!gameStart ? welcomeScreen() : <TriviaRound />}
     </div>
   </div>
 };
