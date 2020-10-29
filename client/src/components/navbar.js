@@ -1,7 +1,7 @@
 import React from 'react';
 
 const NavBar = () => {
-  return <div>
+  return <div className='navbar'>
     <div>
       logo
     </div>

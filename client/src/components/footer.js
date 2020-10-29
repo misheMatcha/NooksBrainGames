@@ -1,12 +1,12 @@
 import React from 'react';
 
 const Footer = () => {
-  return <div>
-    <div>
+  return <div className='footer'>
+    {/* <div> */}
       <p>github</p>
       <p>linkedin</p>
       <p>portfolio</p>
-    </div>
+    {/* </div> */}
   </div>
 };
 

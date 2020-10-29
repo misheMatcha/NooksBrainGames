@@ -45,10 +45,8 @@ const Main = () => {
     </div>
   };
 
-  return <div>
-    <div>
+  return <div className='main'>
       {!gameStart ? welcomeScreen() : <TriviaRound />}
-    </div>
   </div>
 };
 
