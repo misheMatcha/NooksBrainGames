@@ -39,12 +39,6 @@ const Main = () => {
     </div>
   };
 
-  const triviaScreen = () => {
-    return <div>
-      questions
-    </div>
-  };
-
   return <div className='main'>
       {!gameStart ? welcomeScreen() : <TriviaStart onClick={() => setGameStart(!gameStart)}/>}
   </div>

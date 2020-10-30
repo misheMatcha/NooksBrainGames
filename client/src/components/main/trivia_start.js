@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 
 const TriviaStart = props => {
   const [roundStatus, setRoundStatus] = useState('start');
-  const [round, setRound] = useState(1);
+  const [round, setRound] = useState(1); // max rounds is 2 to ensure no questions are ever repeated during a game
   const [score, setScore] = useState(0);
+
   useEffect(() => {
   })
 
@@ -21,15 +22,18 @@ const TriviaStart = props => {
     </div>
   };
 
+  const roundCheck = () => {
+    if(round === 2) props.onClick();
+    setRoundStatus('start');
+    setRound(round + 1);
+  };
+
   const roundEnd = () => {
     return <div>
       <p>Round {round} Ended</p>
       <p>{localStorage.name}'s current score is:</p>
       <p>{score}</p>
-      <button onClick={() => {
-        setRoundStatus('start');
-        props.onClick()
-      }}>click</button>
+      <button onClick={() => roundCheck()}>click</button>
     </div>
   };
 
