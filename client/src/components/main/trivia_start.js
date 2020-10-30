@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getRandomNumber } from '../../util/general_util';
 import TANDEM_QUESTIONS from './Apprentice_TandemFor400_Data.json';
+import Question from './question';
 
 const TriviaStart = props => {
   const [roundStatus, setRoundStatus] = useState('start');
@@ -8,13 +9,12 @@ const TriviaStart = props => {
   const [score, setScore] = useState(0);
   const [questionIndex, setQuestionIndex] = useState(null);
   const usedIndices = new Set();
-  const [currentQuestion, setCurrentQuestion] = useState(null);
+  const [questionCount, setQuestionCount] = useState(1);
   const [answers, setAnswers] = useState([]);
 
   useEffect(() => {
     if(questionIndex === null) setQuestionIndex(getValidIndex(TANDEM_QUESTIONS.length - 1));
-    if(currentQuestion === null) setCurrentQuestion(TANDEM_QUESTIONS[questionIndex]);
-  },[questionIndex, currentQuestion])
+  },[questionIndex])
 
   const roundStart = () => {
     return <div>
@@ -33,8 +33,10 @@ const TriviaStart = props => {
 
   const roundPlaying = () => {
     return <div>
-      currently playing
-      <button onClick={() => setRoundStatus('end')}>next</button>
+      <Question question={TANDEM_QUESTIONS[questionIndex].question} incorrect={TANDEM_QUESTIONS[questionIndex].incorrect} correct={TANDEM_QUESTIONS[questionIndex].correct} onClick={() => setQuestionIndex(questionCount + 1)} />
+      {
+        questionCount % 10 === 0 ? <button onClick={() => setRoundStatus('end')}>next</button> : ''
+      }
     </div>
   };
 
