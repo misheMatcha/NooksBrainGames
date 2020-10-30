@@ -21,7 +21,7 @@ export const swapElements = (idx1, idx2, array) => {
 
 // Creates a new array with the answers shuffled
 export const generateAnswerArray = (incorrect, correct) => {
-  const answers = incorrect;
+  const answers = incorrect.slice();
   answers.push(correct);
   return shuffleArray(answers);
 };

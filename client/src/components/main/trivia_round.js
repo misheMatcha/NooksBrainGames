@@ -1,62 +1,56 @@
 import React, { useEffect, useState } from 'react';
-import * as helperUtil from '../../util/general_util';
+import { getRandomNumber, generateAnswerArray } from '../../util/general_util';
 import TANDEM_QUESTIONS from './Apprentice_TandemFor400_Data.json';
 
 const TriviaRound = () => {
-  const [round, setRound] = useState(1);
-  const [questionNum, setQuestionNum] = useState(1);
-  const previousQuestions = new Set();
-  const questionNumTracker = new Set();
+  const [whichRound, setWhichRound] = useState(1);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(null);
+  const usedQuestionIndexes = new Set();
+  const [currentAnswer, setCurrentAnswer] = useState(null);
+  const [answerTracker, setAnswerTracker] = useState([]);
 
   useEffect(() => {
-  },[]);
+    if(currentQuestionIndex === null) setCurrentQuestionIndex(getValidIndex(TANDEM_QUESTIONS.length - 1));
+  },[currentQuestionIndex]);
 
-  // Implement a timer later
-  const startRound = () => {
-  };
-
-  // Check if the question is valid
-  const getValidRandomNum = max => {
-    const randNum = helperUtil.getRandomNumber(max);
-    while(questionNumTracker.has(randNum)){
-      randNum = helperUtil.getRandomNumber(max);
+  const getValidIndex = max => {
+    let index = getRandomNumber(max);
+    while(usedQuestionIndexes.has(index)){
+      index = getRandomNumber(max);
     }
-    return randNum;
+    return index;
   };
 
-  // Displays answers
-  const whichAnswers = answers => {
-    const alpha = ['a', 'b', 'c', 'd'];
-
-    return answers.map((answer, idx) => {
+  const whichAnswers = (incorrect, correct) => {
+    const answers = generateAnswerArray(incorrect, correct);
+    return answers.map(answer => {
       return <li key={answer}>
-        <p>{alpha[idx]}</p>
-        <p>{answer}</p>
+        {answer}
       </li>
-    })
-  };
-
-  // Renders the questions and answers
-  const whichQuestion = () => {
-    const questionNum = getValidRandomNum(TANDEM_QUESTIONS.length - 1);
-    return TANDEM_QUESTIONS.map((question, idx) => {
-      if(questionNum === idx){
-        questionNumTracker.add(questionNum);
-        const answers = helperUtil.generateAnswerArray(question.incorrect, question.correct);
-        console.log(answers)
-        return <div key={question.question}>
-          <p>{question.question}</p>
-          <ul>
-            {whichAnswers(answers)}
-          </ul>
-        </div>
-      }
     });
   };
 
+  const getRandomQuestion = () => {
+    const question = TANDEM_QUESTIONS[currentQuestionIndex];
+    console.log(question)
+    return <div>
+      <p>{question.question}</p>
+      <div>
+        {whichAnswers(question.incorrect, question.correct)}
+      </div>
+    </div>
+  };
+
+  const submitCurrentAnswer = () => {
+    let temp = answerTracker;
+    temp.push(currentAnswer);
+    setAnswerTracker(temp);
+  };
+
   return <div>
-    round 1
-    {whichQuestion()}
+    <h2>Round {whichRound}</h2>
+    {getRandomQuestion()}
+    <button onClick={() => submitCurrentAnswer()}>Submit</button>
   </div>
 };
 
