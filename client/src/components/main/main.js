@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import TriviaRound from './trivia_round';
+import TriviaStart from './trivia_start';
 
 const Main = () => {
   const [gameStart, setGameStart] = useState(false);
@@ -46,7 +46,7 @@ const Main = () => {
   };
 
   return <div className='main'>
-      {!gameStart ? welcomeScreen() : <TriviaRound />}
+      {!gameStart ? welcomeScreen() : <TriviaStart onClick={() => setGameStart(!gameStart)}/>}
   </div>
 };
 
