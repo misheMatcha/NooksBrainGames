@@ -1,18 +1,34 @@
 import React, { useEffect, useState } from 'react';
+import { getRandomNumber } from '../../util/general_util';
+import TANDEM_QUESTIONS from './Apprentice_TandemFor400_Data.json';
 
 const TriviaStart = props => {
   const [roundStatus, setRoundStatus] = useState('start');
   const [round, setRound] = useState(1); // max rounds is 2 to ensure no questions are ever repeated during a game
   const [score, setScore] = useState(0);
+  const [questionIndex, setQuestionIndex] = useState(null);
+  const usedIndices = new Set();
+  const [currentQuestion, setCurrentQuestion] = useState(null);
+  const [answers, setAnswers] = useState([]);
 
   useEffect(() => {
-  })
+    if(questionIndex === null) setQuestionIndex(getValidIndex(TANDEM_QUESTIONS.length - 1));
+    if(currentQuestion === null) setCurrentQuestion(TANDEM_QUESTIONS[questionIndex]);
+  },[questionIndex, currentQuestion])
 
   const roundStart = () => {
     return <div>
       <p>Round {round} Starting</p>
       <button onClick={() => setRoundStatus('playing')}>next</button>
     </div>
+  };
+
+  const getValidIndex = max => {
+    let index = getRandomNumber(max);
+    while(usedIndices.has(index)){
+      index = getRandomNumber(max);
+    }
+    return index;
   };
 
   const roundPlaying = () => {
