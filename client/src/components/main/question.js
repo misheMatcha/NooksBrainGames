@@ -70,13 +70,13 @@ const Question = props => {
               // Then we need to check whether or not it's the correct one
               // If it is then display it as correct
               if(pick === correct){
-                return <li key={answer} className='answers pick-correct'>
+                return <li key={answer} className='answers-null pick-correct'>
                 {answer}
               </li>
               }else{
                 // Otherwise display it as incorrect
                 // Let's the user know which answer they got right or wrong
-                return <li key={answer} className='answers pick-incorrect'>
+                return <li key={answer} className='answers-null pick-incorrect'>
                 {answer}
               </li>
               }
@@ -84,12 +84,12 @@ const Question = props => {
               // Otherwise check if the current answer is the correct one
               // If it is show which answer was the correct choice
               if(answer === correct){
-                return <li key={answer} className='answers pick-correct'>
+                return <li key={answer} className='answers-null pick-correct'>
                 {answer}
               </li>
               }else{
                 // Otherwise use the default class as nothing changed
-                return <li key={answer} className='answers'>
+                return <li key={answer} className='answers-null'>
                 {answer}
               </li>
               }

@@ -53,6 +53,21 @@
         justify-content: center;
       }
 
+.answers-null{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 15px;
+  width: 147px;
+  font-size: 18px;
+  border: 2px solid #399487;
+  border-radius: 3px;
+  background-color: #449f91;
+  color: #FAF6E5;
+  height: 19px;
+  margin-left: 25px;
+}
 .answers{
   display: flex;
   align-items: center;
