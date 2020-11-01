@@ -15,7 +15,7 @@ const Main = () => {
   };
 
   const welcomeScreen = () => {
-    return <div>
+    return <div className='welcome'>
       <h2>Welcome to Nooks Brain Games</h2>
       <div>
         <p>Some say knowledge gives you power, we believe it too!</p>
