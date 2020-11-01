@@ -6,16 +6,26 @@ import Question from './question';
 const TriviaStart = props => {
   const [roundStatus, setRoundStatus] = useState('start');
   const [round, setRound] = useState(1); // max rounds is 2 to ensure no questions are ever repeated during a game
-  const [score, setScore] = useState(0);
+  const [roundScore, setRoundScore] = useState(0);
+  const [overallScore, setOverallScore] = useState(0);
   const [questionIndex, setQuestionIndex] = useState(null);
   const [usedIndices, setUsedIndices] = useState([]);
   const [questionCount, setQuestionCount] = useState(1);
   const [answers, setAnswers] = useState([]);
 
+  const getScore = () => {
+    let currentScore = 0;
+    let roundArray = answers.slice(round * 10 - 10);
+    roundArray.forEach(answer => {
+      if(answer[1]) currentScore += 10;
+    });
+    setRoundScore(currentScore);
+    setOverallScore(currentScore + overallScore);
+  };
+
   useEffect(() => {
     if(questionIndex === null) setQuestionIndex(getValidIndex(TANDEM_QUESTIONS.length - 1));
-    // console.log(questionCount)
-  },[props, questionCount])
+  },[props])
 
   const roundStart = () => {
     return <div>
@@ -45,9 +55,11 @@ const TriviaStart = props => {
         if(questionCount === 10){
           setRoundStatus('end');
           getNextQuestion(answer, isCorrect);
+          getScore();
         }else if(questionCount === 20){
           setRoundStatus('end');
           setAnswers([...answers, [answer, isCorrect]]);
+          getScore();
         }else{
           getNextQuestion(answer, isCorrect);
         }
@@ -65,7 +77,8 @@ const TriviaStart = props => {
     return <div>
       <p>Round {round} Ended</p>
       <p>{localStorage.name}'s current score is:</p>
-      <p>{score}</p>
+      <p>{roundScore}</p>
+      <p>{overallScore}</p>
       <button onClick={() => roundCheck()}>click</button>
     </div>
   };

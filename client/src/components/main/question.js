@@ -52,7 +52,9 @@ const Question = props => {
           })
         }
       </ul>
-      <button onClick={() => submitAnswer()}>submit</button>
+      {
+        pick === null ? <button>submit</button> : <button onClick={() => submitAnswer()}>submit</button>
+      }
     </div>
   };
 
