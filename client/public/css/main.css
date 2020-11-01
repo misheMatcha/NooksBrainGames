@@ -14,3 +14,19 @@ html, body, #root{
   display: flex;
   justify-content: center;
 }
+
+.pick-default{
+  color: green;
+}
+
+.pick-chosen{
+  color: blue;
+}
+
+.pick-correct{
+  color: purple;
+}
+
+.pick-incorrect{
+  color: red;
+}
