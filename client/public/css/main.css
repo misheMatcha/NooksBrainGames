@@ -2,42 +2,18 @@ html, body, #root{
   height: 100%;
   font-family: 'Itim', cursive;
 }
-
-.app{
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #FDD10A;
-  /* border: 1px solid red; */
-}
-
-.main{
-  display: flex;
-  justify-content: center;
-  border: 1px solid purple;
-  width: 75%;
-  height: 50%;
-}
-
-.welcome{
-  color: #326f66;
-  border: 1px solid blue;
-}
-
-.pick-default{
-  color: green;
-}
-
-.pick-chosen{
-  color: blue;
-}
-
-.pick-correct{
-  color: purple;
-}
-
-.pick-incorrect{
-  color: red;
-}
+  .app{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FDD10A;
+  }
+    .main{
+      display: flex;
+      justify-content: center;
+      width: 75%;
+      height: 65%;
+      /* border: 1px solid purple; */
+    }

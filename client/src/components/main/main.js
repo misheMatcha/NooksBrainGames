@@ -16,11 +16,13 @@ const Main = () => {
 
   const welcomeScreen = () => {
     return <div className='welcome'>
-      <h2>Welcome to Nooks Brain Games</h2>
-      <div>
-        <p>Some say knowledge gives you power, we believe it too!</p>
-        <p>At Nooks Brain Games, we want you to have fun while testing your noggin.</p>
-        <p>How the game is played:</p>
+      <div className='welcome-instructions'>
+        <h2>Welcome to Nooks Brain Games</h2>
+        <p>
+          Some say knowledge gives you power, we believe it too! <br/>
+          At Nooks Brain Games, we want you to have fun while testing your noggin. <br/>
+          How the game is played:
+        </p>
         <ul>
           <li>Each game consists two rounds</li>
           <li>Each round has 10 multiple choice questions</li>
@@ -28,14 +30,14 @@ const Main = () => {
           <li>You can look at previous questions you've answered during and after a round</li>
           <li>Your score will be updated after each round</li>
         </ul>
-        <p>No matter what, remember to have fun!</p>
+        <p className='welcome-fun'>No matter what, remember to have fun!</p>
       </div>
-      <div>
-        <label>Name:
+      <div className='welcome-start'>
+        <label><p>Name:</p>
           <input type="text" placeholder="ex: Isabelle, K.K Slider, etc..." onChange={event => updatePlayerName(event.target.value)} />
         </label>
+        <button onClick={() => startGame()}>start</button>
       </div>
-      <button onClick={() => startGame()}>start</button>
     </div>
   };
 

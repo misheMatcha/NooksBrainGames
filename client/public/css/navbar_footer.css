@@ -6,28 +6,20 @@
   justify-content: center;
   width: 100%;
   border-bottom: 10px solid #399487;
-  /* border-bottom: 10px solid #dab618; */
 }
-
-.navbar-container{
-  display: flex;
-  width: 80%;
-  /* border: 1px solid red; */
-  align-items: center;
-  justify-content: center;
-}
-
-.logo{
-  width: 250px;
-  /* border: 1px solid red; */
-}
-
-.navbar-container div h1{
-  font-size:75px;
-  /* color: #FDD10A; */
-  color: #FAF6E5;
-  /* border: 1px solid red; */
-}
+  .navbar-container{
+    display: flex;
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+  }
+    .logo{
+      width: 250px;
+    }
+      .navbar-container div h1{
+        font-size:75px;
+        color: #FAF6E5;
+      }
 
 .footer{
   background-color: #399487;
@@ -38,32 +30,23 @@
   color: #FAF6E5;
   width: 100%;
 }
-
-.footer div{
-  width: 75%;
-  /* border: 1px solid red; */
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.footer a{
-  font-size: 50px;
-}
-  .footer a:hover{
-    color: #FDD10A;
+  .footer div{
+    width: 75%;
+    display: flex;
+    justify-content: space-evenly;
   }
+    .footer a{
+      font-size: 50px;
+    }
+      .footer a:hover{
+        color: #FDD10A;
+      }
 
 @media only screen and (min-width: 1008px){
-  .navbar{
-  }
 }
 
 @media only screen and (max-width: 1007px){
-  .navbar{
-  }
 }
 
 @media only screen and (max-width: 640px){
-  .navbar{
-  }
 }
