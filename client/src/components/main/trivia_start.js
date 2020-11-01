@@ -28,9 +28,9 @@ const TriviaStart = props => {
   },[props])
 
   const roundStart = () => {
-    return <div>
-      <p>Round {round} Starting</p>
-      <button onClick={() => setRoundStatus('playing')}>next</button>
+    return <div className='round-start'>
+      <p>Round {round}</p>
+      <button className='button' onClick={() => setRoundStatus('playing')}>Start</button>
     </div>
   };
 
@@ -50,7 +50,7 @@ const TriviaStart = props => {
   };
 
   const roundPlaying = () => {
-    return <div>
+    return <div className='round-playing'>
       <Question count={questionCount} question={TANDEM_QUESTIONS[questionIndex].question} incorrect={TANDEM_QUESTIONS[questionIndex].incorrect} correct={TANDEM_QUESTIONS[questionIndex].correct} onClick={(answer, isCorrect, roundEnded) => {
         if(questionCount === 10){
           setRoundStatus('end');
@@ -74,16 +74,24 @@ const TriviaStart = props => {
   };
 
   const roundEnd = () => {
-    return <div>
-      <p>Round {round} Ended</p>
-      <p>{localStorage.name}'s current score is:</p>
-      <p>{roundScore}</p>
-      <p>{overallScore}</p>
-      <button onClick={() => roundCheck()}>click</button>
+    return <div className='round-end'>
+      <div className='round-end-title'>
+        <p>Round {round} Ended</p>
+      </div>
+      <div className='round-end-result'>
+        <p>Result's are in!</p>
+        <div className='round-end-scores'>
+          <p>Round {round}'s score: {roundScore}</p>
+          <p className='weighted'>Overall score: {overallScore}</p>
+        </div>
+      </div>
+      <button className='button' onClick={() => roundCheck()}>{
+        round === 2 ? 'End Game' : 'Next Round'
+      }</button>
     </div>
   };
 
-  return <div>
+  return <div className='trivia-container'>
     {
       roundStatus === 'start' ? roundStart() : roundStatus === 'playing' ? roundPlaying() : roundEnd()
     }

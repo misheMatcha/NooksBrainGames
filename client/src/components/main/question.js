@@ -36,30 +36,32 @@ const Question = props => {
   };
 
   const showChoices = (answers, correct) => {
-    return <div>
+    return <div className='display-answers'>
       <ul>
         {
           answers.map(answer => {
             if(pick === null || pick !== answer){
-              return <li key={answer} className='pick-default' onClick={() => updatePick(answer)}>
+              return <li key={answer} className='answers' onClick={() => updatePick(answer)}>
                 {answer}
               </li>
             }else if(pick === answer){
-              return <li key={answer} className='pick-chosen' onClick={() => updatePick(answer)}>
+              return <li key={answer} className='answers pick-chosen' onClick={() => updatePick(answer)}>
                 {answer}
               </li>
             }
           })
         }
       </ul>
-      {
-        pick === null ? <button>submit</button> : <button onClick={() => submitAnswer()}>submit</button>
-      }
+      <div className='display-answers-button'>
+        {
+          pick === null ? <button className='button-null'>Submit</button> : <button className='button' onClick={() => submitAnswer()}>Submit</button>
+        }
+      </div>
     </div>
   };
 
   const showResult = (answers, correct) => {
-    return <div>
+    return <div className='display-answers'>
       <ul>
         {
           answers.map(answer => {
@@ -68,13 +70,13 @@ const Question = props => {
               // Then we need to check whether or not it's the correct one
               // If it is then display it as correct
               if(pick === correct){
-                return <li key={answer} className='pick-correct'>
+                return <li key={answer} className='answers-null pick-correct'>
                 {answer}
               </li>
               }else{
                 // Otherwise display it as incorrect
                 // Let's the user know which answer they got right or wrong
-                return <li key={answer} className='pick-incorrect'>
+                return <li key={answer} className='answers-null pick-incorrect'>
                 {answer}
               </li>
               }
@@ -82,12 +84,12 @@ const Question = props => {
               // Otherwise check if the current answer is the correct one
               // If it is show which answer was the correct choice
               if(answer === correct){
-                return <li key={answer} className='pick-correct'>
+                return <li key={answer} className='answers-null pick-correct'>
                 {answer}
               </li>
               }else{
                 // Otherwise use the default class as nothing changed
-                return <li key={answer} className='pick-default'>
+                return <li key={answer} className='answers-null'>
                 {answer}
               </li>
               }
@@ -95,15 +97,17 @@ const Question = props => {
           })
         }
       </ul>
-      <button onClick={() => gotoNextQuestion()}>
-        {
-          props.count % 10 === 0 ? 'end round' : 'next question'
-        }
-      </button>
+      <div className='display-answers-button'>
+        <button className='button' onClick={() => gotoNextQuestion()}>
+          {
+            props.count % 10 === 0 ? 'End Round' : 'Next'
+          }
+        </button>
+      </div>
     </div>
   };
 
-  return <div>
+  return <div className='question'>
     <h1>Question {props.count}</h1>
     <p>{props.question}</p>
     {

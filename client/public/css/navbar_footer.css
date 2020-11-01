@@ -1,25 +1,53 @@
 .navbar{
-  background-color: #4FBE4A;
+  background-color: #59BBAC;
   display: flex;
-  height: 100px;
+  height: 275px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-bottom: 10px solid #399487;
 }
-.footer{
-  background-color: #4FBE4A;
-  display: flex;
-  height: 100px;
-}
-
-@media only screen and (min-width: 1008px){
-  .navbar{
+  .navbar-container{
+    display: flex;
+    width: 80%;
+    align-items: center;
+    justify-content: center;
   }
+    .logo{
+      width: 250px;
+    }
+      .navbar-container div h1{
+        font-size:75px;
+        color: #FAF6E5;
+      }
+
+.footer{
+  background-color: #399487;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  color: #FAF6E5;
+  width: 100%;
+}
+  .footer div{
+    width: 75%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+    .footer a{
+      font-size: 50px;
+    }
+      .footer a:hover{
+        color: #FDD10A;
+      }
+
+/* add later */
+@media only screen and (min-width: 1008px){
 }
 
 @media only screen and (max-width: 1007px){
-  .navbar{
-  }
 }
 
 @media only screen and (max-width: 640px){
-  .navbar{
-  }
 }

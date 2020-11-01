@@ -1,0 +1,78 @@
+.trivia-container{
+  width: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #326f66;
+}
+  .round-start{
+    border: 3px dashed #399487;
+    border-radius: 5px;
+    background-color: #FDD10A;
+    height: 75%;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+    .round-start p{
+      font-size: 50px;
+    }
+
+  .round-playing{
+    height: 80%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .round-end{
+    border: 3px dashed #399487;
+    border-radius: 5px;
+    background-color: #FDD10A;
+    height: 75%;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+    .round-end-title{
+      font-size: 50px;
+      padding: 20px;
+      width: 350px;
+    }
+    .round-end-result{
+      border: 3px dashed #399487;
+      border-radius: 5px;
+      background-color: #399486af;
+      height: 250px;
+      width: 300px;
+      padding: 20px;
+      width: 318px;
+      font-size: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      color: #FAF6E5;
+      text-align: center;
+    }
+      .round-end-scores{
+        border: 3px dashed #399486be;
+        border-radius: 5px;
+        background-color: #60aea2;
+        height: 140px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+      }
+        .round-end-scores p{
+          font-size: 25px;
+        }
+
+.weighted{
+  font-weight: 700;
+}

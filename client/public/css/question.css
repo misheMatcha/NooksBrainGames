@@ -1,0 +1,108 @@
+.question{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+  .question h1{
+    text-align: center;
+    padding: 20px;
+    font-size: 30px;
+  }
+  .question p{
+    border: 3px dashed #399487;
+    border-radius: 5px;
+    background-color: #399486af;
+    text-align: center;
+    line-height: 47px;
+    font-size: 25px;
+    padding: 10px;
+    width: 100%;
+    height: 226px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FAF6E5;
+  }
+    .display-answers{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      height: 533px;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 10px;
+    }
+      .display-answers ul{
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 215px;
+        align-items: center;
+        padding: 10px;
+        border: 3px dashed #399487;
+        border-radius: 5px;
+        background-color: #39948670;
+      }
+      .display-answers-button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+.answers-null{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 15px;
+  width: 147px;
+  font-size: 18px;
+  border: 2px solid #399487;
+  border-radius: 3px;
+  background-color: #449f91;
+  color: #FAF6E5;
+  height: 19px;
+  margin-left: 25px;
+}
+.answers{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 15px;
+  width: 147px;
+  font-size: 18px;
+  border: 2px solid #399487;
+  border-radius: 3px;
+  background-color: #449f91;
+  color: #FAF6E5;
+  height: 19px;
+  margin-left: 25px;
+}
+  .answers:hover{
+    border: 2px solid rgb(84, 136, 129);
+    background-color: #3c7e74;
+    color: white;
+  }
+
+.pick-chosen{
+  border: 2px solid rgb(84, 136, 129);
+  background-color: #3c7e74;
+  color: white;
+}
+
+.pick-correct{
+  border: 2px solid #439143;
+  background-color: #47a047;
+  color: white;
+}
+
+.pick-incorrect{
+  border: 2px solid #a5312f;
+  background-color: #b33735;
+  color: white;
+}
