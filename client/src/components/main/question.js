@@ -6,18 +6,21 @@ const Question = props => {
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const [answers, setAnswers] = useState([]);
   const [nextQuestion, setNextQuestion] = useState(false);
+  const [tempCorrect, setTempCorrect] = useState(props.correct)
 
-  
+  const questionCleanUp = () => {
+    if(tempCorrect !== props.correct){
+      setAnswers(generateAnswerArray(props.incorrect, props.correct));
+      setPick(null);
+      setHasSubmitted(false);
+      setNextQuestion(false);
+    }
+  };
+
   useEffect(() => {
     if(!hasSubmitted && !answers.length) setAnswers(generateAnswerArray(props.incorrect, props.correct));
-    return () => {
-      if(nextQuestion){
-        setAnswers([]);
-        setPick(null);
-        setHasSubmitted(false);
-      }
-    };
-  },[]);
+    if(nextQuestion) questionCleanUp();
+  },[props]);
 
   const updatePick = answer => {
     setPick(answer);
@@ -25,6 +28,11 @@ const Question = props => {
 
   const submitAnswer = () => {
     setHasSubmitted(true);
+  };
+
+  const gotoNextQuestion = () => {
+    setNextQuestion(true);
+    props.onClick();
   };
 
   const showChoices = (answers, correct) => {
@@ -85,7 +93,7 @@ const Question = props => {
           })
         }
       </ul>
-      <button>next question</button>
+      <button onClick={() => gotoNextQuestion()}>next question</button>
     </div>
   };
 
