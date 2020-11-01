@@ -1,10 +1,22 @@
 .navbar{
-  background-color: #4FBE4A;
+  background-color: #59BBAC;
   display: flex;
-  height: 100px;
+  height: 300px;
+  align-items: center;
+  justify-content: center;
 }
+
+.logo{
+  width: 300px;
+}
+
+.navbar div h1{
+  font-size: 100px;
+  color: #FDD10A;
+}
+
 .footer{
-  background-color: #4FBE4A;
+  background-color: #399487;
   display: flex;
   height: 100px;
 }
