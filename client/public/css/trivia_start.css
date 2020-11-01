@@ -20,13 +20,23 @@
     }
     .round-start button{
       height: 50px;
-            width: 100px;
-            text-align: center;
-            border-radius: 3px;
-            background-color: #399487;
-            color: #FDD10A;
-            font-size: 25px;
+      width: 100px;
+      text-align: center;
+      border-radius: 3px;
+      background-color: #399487;
+      color: #FDD10A;
+      font-size: 25px;
     }
       .round-start button:hover{
         background-color: #326f66;
       }
+
+  .round-playing{
+    border: 1px solid black;
+    height: 80%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }

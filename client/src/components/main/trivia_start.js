@@ -50,7 +50,7 @@ const TriviaStart = props => {
   };
 
   const roundPlaying = () => {
-    return <div>
+    return <div className='round-playing'>
       <Question count={questionCount} question={TANDEM_QUESTIONS[questionIndex].question} incorrect={TANDEM_QUESTIONS[questionIndex].incorrect} correct={TANDEM_QUESTIONS[questionIndex].correct} onClick={(answer, isCorrect, roundEnded) => {
         if(questionCount === 10){
           setRoundStatus('end');

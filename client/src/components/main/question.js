@@ -36,7 +36,7 @@ const Question = props => {
   };
 
   const showChoices = (answers, correct) => {
-    return <div>
+    return <div className='display-answers'>
       <ul>
         {
           answers.map(answer => {
@@ -52,14 +52,16 @@ const Question = props => {
           })
         }
       </ul>
-      {
-        pick === null ? <button>submit</button> : <button onClick={() => submitAnswer()}>submit</button>
-      }
+      <div className='display-answers-button'>
+        {
+          pick === null ? <button>submit</button> : <button onClick={() => submitAnswer()}>submit</button>
+        }
+      </div>
     </div>
   };
 
   const showResult = (answers, correct) => {
-    return <div>
+    return <div className='display-answers'>
       <ul>
         {
           answers.map(answer => {
@@ -103,7 +105,7 @@ const Question = props => {
     </div>
   };
 
-  return <div>
+  return <div className='question'>
     <h1>Question {props.count}</h1>
     <p>{props.question}</p>
     {
