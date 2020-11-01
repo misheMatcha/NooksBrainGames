@@ -12,14 +12,25 @@
 
 .navbar div h1{
   font-size: 100px;
-  color: #FDD10A;
+  /* color: #FDD10A; */
+  color: #FAF6E5;
 }
 
 .footer{
   background-color: #399487;
   display: flex;
+  justify-content: space-around;
+  align-items: center;
   height: 100px;
+  color: #FAF6E5;
 }
+
+.footer a{
+  font-size: 50px;
+}
+  .footer a:hover{
+    color: #FDD10A;
+  }
 
 @media only screen and (min-width: 1008px){
   .navbar{
