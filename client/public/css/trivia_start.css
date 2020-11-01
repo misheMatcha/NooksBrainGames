@@ -1,5 +1,5 @@
 .trivia-container{
-  border: 1px solid black;
+  /* border: 1px solid black; */
   width: 85%;
   display: flex;
   align-items: center;
@@ -42,13 +42,9 @@
     align-items: center;
   }
     .round-end-title{
-      /* border: 3px dashed #399487;
-      border-radius: 5px;
-      background-color: #399486af; */
       font-size: 50px;
       padding: 20px;
       width: 318px;
-      /* color: #FAF6E5; */
     }
     .round-end-result{
       border: 3px dashed #399487;

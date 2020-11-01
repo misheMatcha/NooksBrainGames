@@ -24,27 +24,65 @@ html, body, #root{
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
+      /* border: 1px solid purple; */
+      padding: 25px;
     }
       .welcome-instructions{
         font-size: 25px;
         padding: 10px;
-        line-height: 40px;
+        /* line-height: px; */
+        /* border: 1px solid purple; */
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        align-items: center;
       }
         .welcome-instructions h2{
           font-size: 50px;
           text-align: center;
-          padding: 10px;
+          padding: 15px;
+          /* border: 1px solid purple; */
+        }
+        .welcome-instructions-intro{
+          border: 3px solid #3994868a;
+          border-radius: 5px;
+          /* background-color: #FDD10A; */
+          background-color: #399486af;
+          /* border: 1px solid purple; */
+          line-height: 33px;
+          padding: 20px;
+          width: 680px;
+          color: #FAF6E5;
         }
         .welcome-instructions ul{
+          margin-top: 5px;
+          border: 3px dashed #399487;
+          border-radius: 5px;
+          background-color: #FDD10A;
           padding: 10px;
           font-size: 20px;
+          /* border: 1px solid purple; */
+          width: 700px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
         }
+          .welcome-instructions-howto{
+            font-weight: 700;
+            padding: 10px;
+          }
           .welcome-instructions ul li{
             list-style-image: url('../images/list-leaf.png');
+            /* border: 1px solid purple; */
+            line-height: 27px;
+            font-size: 17px;
+            width: 600px;
           }
 
         .welcome-fun{
           text-align: center;
+          /* border: 1px solid purple; */
+          padding-top: 10px;
         }
 
         .welcome-start{
@@ -53,28 +91,42 @@ html, body, #root{
           flex-direction: column;
           align-items: center;
           height: 250px;
+          /* border: 1px solid purple; */
         }
-          .welcome-start label{
-            width: 400px;
-            height: 75px;
+          .welcome-start-name{
+            border: 3px dashed #399487;
+            border-radius: 5px;
+            background-color: #FDD10A;
+            text-align: center;
+            height: 100px;
             display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: space-evenly;
-            font-size: 20px;
+            align-items: center;
+            width: 700px;
+            padding: 10px;
           }
-            .welcome-start label p{
-              font-weight: 600;
+            .welcome-start-name p{
+              font-weight: 700;
             }
-            .welcome-start label input{
-              width: 70%;
-              height: 60%;
-              background-color: #FAF6E5;
-              padding: 10px 20px 10px 20px;
-              border-radius: 5px;
+            .welcome-start-name label{
+              width: 300px;
+              height: 50px;
+              display: flex;
+              align-items: center;
+              justify-content: space-evenly;
+              font-size: 15px;
             }
-            .welcome-start label input::placeholder{
-              text-align: center;
-            }
+              .welcome-start-name label input{
+                width: 70%;
+                height: 60%;
+                background-color: #FAF6E5;
+                padding: 10px 20px 10px 20px;
+                border-radius: 5px;
+              }
+              .welcome-start label input::placeholder{
+                text-align: center;
+              }
 
 .button-null{
   height: 50px;
