@@ -14,7 +14,8 @@ const TriviaStart = props => {
 
   useEffect(() => {
     if(questionIndex === null) setQuestionIndex(getValidIndex(TANDEM_QUESTIONS.length - 1));
-  },[props, usedIndices])
+    // console.log(questionCount)
+  },[props, questionCount])
 
   const roundStart = () => {
     return <div>
@@ -40,10 +41,17 @@ const TriviaStart = props => {
 
   const roundPlaying = () => {
     return <div>
-      <Question question={TANDEM_QUESTIONS[questionIndex].question} incorrect={TANDEM_QUESTIONS[questionIndex].incorrect} correct={TANDEM_QUESTIONS[questionIndex].correct} onClick={(answer, isCorrect) => getNextQuestion(answer, isCorrect)} />
-      {
-        questionCount % 10 === 0 ? <button onClick={() => setRoundStatus('end')}>next</button> : ''
-      }
+      <Question count={questionCount} question={TANDEM_QUESTIONS[questionIndex].question} incorrect={TANDEM_QUESTIONS[questionIndex].incorrect} correct={TANDEM_QUESTIONS[questionIndex].correct} onClick={(answer, isCorrect, roundEnded) => {
+        if(questionCount === 10){
+          setRoundStatus('end');
+          getNextQuestion(answer, isCorrect);
+        }else if(questionCount === 20){
+          setRoundStatus('end');
+          setAnswers([...answers, [answer, isCorrect]]);
+        }else{
+          getNextQuestion(answer, isCorrect);
+        }
+      }} />
     </div>
   };
 

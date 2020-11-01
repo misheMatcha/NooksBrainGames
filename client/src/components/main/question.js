@@ -31,8 +31,8 @@ const Question = props => {
   };
 
   const gotoNextQuestion = () => {
-    setNextQuestion(true);
     props.onClick(pick, pick === props.correct);
+    setNextQuestion(true);
   };
 
   const showChoices = (answers, correct) => {
@@ -93,12 +93,16 @@ const Question = props => {
           })
         }
       </ul>
-      <button onClick={() => gotoNextQuestion()}>next question</button>
+      <button onClick={() => gotoNextQuestion()}>
+        {
+          props.count % 10 === 0 ? 'end round' : 'next question'
+        }
+      </button>
     </div>
   };
 
   return <div>
-    <h1>Question</h1>
+    <h1>Question {props.count}</h1>
     <p>{props.question}</p>
     {
       hasSubmitted ? showResult(answers, props.correct) : showChoices(answers, props.correct)
