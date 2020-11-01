@@ -76,15 +76,24 @@ html, body, #root{
               text-align: center;
             }
 
-          .welcome-start button{
-            height: 50px;
-            width: 100px;
-            text-align: center;
-            border-radius: 3px;
-            background-color: #399487;
-            color: #FDD10A;
-            font-size: 25px;
-          }
-            .welcome-start button:hover{
-              background-color: #326f66;
-            }
+.button-null{
+  height: 50px;
+  width: 150px;
+  text-align: center;
+  border-radius: 3px;
+  background-color: #399487;
+  color: #FAF6E5;
+  font-size: 25px;
+}
+.button{
+  height: 50px;
+  width: 150px;
+  text-align: center;
+  border-radius: 3px;
+  background-color: #399487;
+  color: #FDD10A;
+  font-size: 25px;
+}
+  .button:hover{
+    background-color: #326f66;
+  }

@@ -30,7 +30,7 @@ const TriviaStart = props => {
   const roundStart = () => {
     return <div className='round-start'>
       <p>Round {round}</p>
-      <button onClick={() => setRoundStatus('playing')}>Start</button>
+      <button className='button' onClick={() => setRoundStatus('playing')}>Start</button>
     </div>
   };
 

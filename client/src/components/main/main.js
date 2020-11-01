@@ -36,7 +36,7 @@ const Main = () => {
         <label><p>Name:</p>
           <input type="text" placeholder="ex: Isabelle, K.K Slider, etc..." onChange={event => updatePlayerName(event.target.value)} />
         </label>
-        <button onClick={() => startGame()}>start</button>
+        <button className='button' onClick={() => startGame()}>Start</button>
       </div>
     </div>
   };
