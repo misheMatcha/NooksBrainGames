@@ -42,7 +42,8 @@ const Main = () => {
   };
 
   return <div className='main'>
-      {!gameStart ? welcomeScreen() : <TriviaStart onClick={() => setGameStart(!gameStart)}/>}
+      {/* {!gameStart ? welcomeScreen() : <TriviaStart onClick={() => setGameStart(!gameStart)}/>} */}
+      <TriviaStart onClick={() => setGameStart(!gameStart)}/>
   </div>
 };
 
