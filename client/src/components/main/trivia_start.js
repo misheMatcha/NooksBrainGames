@@ -8,13 +8,13 @@ const TriviaStart = props => {
   const [round, setRound] = useState(1); // max rounds is 2 to ensure no questions are ever repeated during a game
   const [score, setScore] = useState(0);
   const [questionIndex, setQuestionIndex] = useState(null);
-  const usedIndices = new Set();
+  const [usedIndices, setUsedIndices] = useState([]);
   const [questionCount, setQuestionCount] = useState(1);
   const [answers, setAnswers] = useState([]);
 
   useEffect(() => {
     if(questionIndex === null) setQuestionIndex(getValidIndex(TANDEM_QUESTIONS.length - 1));
-  },[questionIndex])
+  },[props, usedIndices])
 
   const roundStart = () => {
     return <div>
@@ -25,15 +25,22 @@ const TriviaStart = props => {
 
   const getValidIndex = max => {
     let index = getRandomNumber(max);
-    while(usedIndices.has(index)){
+    while(usedIndices.includes(index)){
       index = getRandomNumber(max);
     }
+    setUsedIndices([...usedIndices, index]);
     return index;
+  };
+
+  const getNextQuestion = (answer) => {
+    setAnswers([...answers, answer])
+    setQuestionCount(questionCount + 1);
+    setQuestionIndex(getValidIndex(TANDEM_QUESTIONS.length - 1));
   };
 
   const roundPlaying = () => {
     return <div>
-      <Question question={TANDEM_QUESTIONS[questionIndex].question} incorrect={TANDEM_QUESTIONS[questionIndex].incorrect} correct={TANDEM_QUESTIONS[questionIndex].correct} onClick={() => setQuestionIndex(questionCount + 1)} />
+      <Question question={TANDEM_QUESTIONS[questionIndex].question} incorrect={TANDEM_QUESTIONS[questionIndex].incorrect} correct={TANDEM_QUESTIONS[questionIndex].correct} onClick={answer => getNextQuestion(answer)} />
       {
         questionCount % 10 === 0 ? <button onClick={() => setRoundStatus('end')}>next</button> : ''
       }
