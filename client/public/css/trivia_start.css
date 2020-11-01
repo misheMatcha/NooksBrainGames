@@ -20,7 +20,7 @@
     }
 
   .round-playing{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     height: 80%;
     width: 80%;
     display: flex;
