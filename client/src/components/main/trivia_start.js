@@ -28,9 +28,9 @@ const TriviaStart = props => {
   },[props])
 
   const roundStart = () => {
-    return <div>
-      <p>Round {round} Starting</p>
-      <button onClick={() => setRoundStatus('playing')}>next</button>
+    return <div className='round-start'>
+      <p>Round {round}</p>
+      <button onClick={() => setRoundStatus('playing')}>Start</button>
     </div>
   };
 
@@ -83,7 +83,7 @@ const TriviaStart = props => {
     </div>
   };
 
-  return <div>
+  return <div className='trivia-container'>
     {
       roundStatus === 'start' ? roundStart() : roundStatus === 'playing' ? roundPlaying() : roundEnd()
     }

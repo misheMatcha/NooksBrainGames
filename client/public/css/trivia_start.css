@@ -1,70 +1,32 @@
-.welcome{
-  color: #326f66;
-  padding: 10px;
+.trivia-container{
+  border: 1px solid black;
+  width: 85%;
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  align-items: center;
+  justify-content: center;
+  color: #326f66;
 }
-  .welcome-instructions{
-    font-size: 25px;
-    padding: 10px;
-    line-height: 40px;
+  .round-start{
+    border: 1px solid black;
+    height: 25%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
   }
-    .welcome-instructions h2{
+    .round-start p{
       font-size: 50px;
-      text-align: center;
-      padding: 10px;
     }
-    .welcome-instructions ul{
-      padding: 10px;
-      font-size: 20px;
+    .round-start button{
+      height: 50px;
+            width: 100px;
+            text-align: center;
+            border-radius: 3px;
+            background-color: #399487;
+            color: #FDD10A;
+            font-size: 25px;
     }
-      .welcome-instructions ul li{
-        list-style-image: url('../images/list-leaf.png');
+      .round-start button:hover{
+        background-color: #326f66;
       }
-
-    .welcome-fun{
-      text-align: center;
-    }
-
-    .welcome-start{
-      display: flex;
-      justify-content: space-evenly;
-      flex-direction: column;
-      align-items: center;
-      height: 250px;
-    }
-      .welcome-start label{
-        width: 400px;
-        height: 75px;
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-        font-size: 20px;
-      }
-        .welcome-start label p{
-          font-weight: 600;
-        }
-        .welcome-start label input{
-          width: 70%;
-          height: 60%;
-          background-color: #FAF6E5;
-          padding: 10px 20px 10px 20px;
-          border-radius: 5px;
-        }
-        .welcome-start label input::placeholder{
-          text-align: center;
-        }
-
-      .welcome-start button{
-        height: 50px;
-        width: 100px;
-        text-align: center;
-        border-radius: 3px;
-        background-color: #399487;
-        color: #FDD10A;
-        font-size: 25px;
-      }
-        .welcome-start button:hover{
-          background-color: #326f66;
-        }
