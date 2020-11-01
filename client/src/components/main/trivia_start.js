@@ -93,9 +93,10 @@ const TriviaStart = props => {
 
   return <div className='trivia-container'>
     {
-      // roundStatus === 'start' ? roundStart() : roundStatus === 'playing' ? roundPlaying() : roundEnd()
+      roundStatus === 'start' ? roundStart() : roundStatus === 'playing' ? roundPlaying() : roundEnd()
     }
-    {roundEnd()}
+    {/* {roundStart()} */}
+    {/* {roundEnd()} */}
   </div>
 };
 

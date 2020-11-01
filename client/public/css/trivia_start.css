@@ -7,11 +7,14 @@
   color: #326f66;
 }
   .round-start{
-    height: 25%;
-    width: 50%;
+    border: 3px dashed #399487;
+    border-radius: 5px;
+    background-color: #FDD10A;
+    height: 75%;
+    width: 75%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
   }
     .round-start p{
@@ -31,7 +34,6 @@
     border: 3px dashed #399487;
     border-radius: 5px;
     background-color: #FDD10A;
-    /* border: 1px solid black; */
     height: 75%;
     width: 75%;
     display: flex;
@@ -40,20 +42,18 @@
     align-items: center;
   }
     .round-end-title{
-      border: 3px dashed #399487;
+      /* border: 3px dashed #399487;
       border-radius: 5px;
-      background-color: #399486af;
-      /* border: 1px solid black; */
+      background-color: #399486af; */
       font-size: 50px;
       padding: 20px;
       width: 318px;
-      color: #FAF6E5;
+      /* color: #FAF6E5; */
     }
     .round-end-result{
       border: 3px dashed #399487;
       border-radius: 5px;
       background-color: #399486af;
-      /* border: 1px solid black; */
       height: 250px;
       width: 300px;
       padding: 20px;
@@ -68,17 +68,13 @@
       .round-end-scores{
         border: 3px dashed #399486be;
         border-radius: 5px;
-        background-color: #59BBAC;
-        /* border: 1px solid black; */
+        background-color: #60aea2;
         height: 140px;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
-        /* color: #FAF6E5; */
       }
         .round-end-scores p{
-          /* border: 1px solid black; */
-          /* text-align: center; */
           font-size: 25px;
         }
 
