@@ -32,15 +32,15 @@ const TriviaStart = props => {
     return index;
   };
 
-  const getNextQuestion = (answer) => {
-    setAnswers([...answers, answer])
+  const getNextQuestion = (answer, isCorrect) => {
+    setAnswers([...answers, [answer, isCorrect]]);
     setQuestionCount(questionCount + 1);
     setQuestionIndex(getValidIndex(TANDEM_QUESTIONS.length - 1));
   };
 
   const roundPlaying = () => {
     return <div>
-      <Question question={TANDEM_QUESTIONS[questionIndex].question} incorrect={TANDEM_QUESTIONS[questionIndex].incorrect} correct={TANDEM_QUESTIONS[questionIndex].correct} onClick={answer => getNextQuestion(answer)} />
+      <Question question={TANDEM_QUESTIONS[questionIndex].question} incorrect={TANDEM_QUESTIONS[questionIndex].incorrect} correct={TANDEM_QUESTIONS[questionIndex].correct} onClick={(answer, isCorrect) => getNextQuestion(answer, isCorrect)} />
       {
         questionCount % 10 === 0 ? <button onClick={() => setRoundStatus('end')}>next</button> : ''
       }

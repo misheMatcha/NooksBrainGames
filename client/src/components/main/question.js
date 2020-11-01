@@ -32,7 +32,7 @@ const Question = props => {
 
   const gotoNextQuestion = () => {
     setNextQuestion(true);
-    props.onClick(pick);
+    props.onClick(pick, pick === props.correct);
   };
 
   const showChoices = (answers, correct) => {
