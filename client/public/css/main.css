@@ -15,7 +15,6 @@ html, body, #root{
       justify-content: center;
       width: 75%;
       height: 65%;
-      /* border: 1px solid purple; */
     }
 
     .welcome{
@@ -24,31 +23,24 @@ html, body, #root{
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
-      /* border: 1px solid purple; */
       padding: 25px;
     }
       .welcome-instructions{
         font-size: 25px;
         padding: 10px;
-        /* line-height: px; */
-        /* border: 1px solid purple; */
         display: flex;
         flex-direction: column;
-        /* justify-content: center; */
         align-items: center;
       }
         .welcome-instructions h2{
           font-size: 50px;
           text-align: center;
           padding: 15px;
-          /* border: 1px solid purple; */
         }
         .welcome-instructions-intro{
           border: 3px solid #3994868a;
           border-radius: 5px;
-          /* background-color: #FDD10A; */
           background-color: #399486af;
-          /* border: 1px solid purple; */
           line-height: 33px;
           padding: 20px;
           width: 680px;
@@ -61,7 +53,6 @@ html, body, #root{
           background-color: #FDD10A;
           padding: 10px;
           font-size: 20px;
-          /* border: 1px solid purple; */
           width: 700px;
           display: flex;
           flex-direction: column;
@@ -73,7 +64,6 @@ html, body, #root{
           }
           .welcome-instructions ul li{
             list-style-image: url('../images/list-leaf.png');
-            /* border: 1px solid purple; */
             line-height: 27px;
             font-size: 17px;
             width: 600px;
@@ -81,7 +71,6 @@ html, body, #root{
 
         .welcome-fun{
           text-align: center;
-          /* border: 1px solid purple; */
           padding-top: 10px;
         }
 
@@ -91,7 +80,6 @@ html, body, #root{
           flex-direction: column;
           align-items: center;
           height: 250px;
-          /* border: 1px solid purple; */
         }
           .welcome-start-name{
             border: 3px dashed #399487;

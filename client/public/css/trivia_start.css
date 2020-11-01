@@ -1,5 +1,4 @@
 .trivia-container{
-  /* border: 1px solid black; */
   width: 85%;
   display: flex;
   align-items: center;
@@ -44,7 +43,7 @@
     .round-end-title{
       font-size: 50px;
       padding: 20px;
-      width: 318px;
+      width: 350px;
     }
     .round-end-result{
       border: 3px dashed #399487;
