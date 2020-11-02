@@ -27,7 +27,7 @@ const Main = () => {
           <li>Each game consists two rounds</li>
           <li>Each round has 10 multiple choice questions</li>
           <li>Once an answer is submitted you can't change it (oh no!)</li>
-          <li>You can look at previous questions you've answered during and after a round</li>
+          {/* <li>You can look at previous questions you've answered during and after a round</li> */}
           <li>Your score will be updated after each round</li>
         </ul>
         <p className='welcome-fun'>No matter what, remember to have fun!</p>
