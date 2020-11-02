@@ -6,6 +6,35 @@ Nooks Brain Games is a simple trivia application.
 # Getting Started
 To get started, open the client folder and run _**yarn start**_. Then in your browser open http://localhost:3000 to view Nooks Brain Games.
 
+# Highlights
+* Calculate the current rounds score by taking a specific section of an array
+```javascript
+    let currentScore = 0;
+    // 10 questions in a round, the round number * 10 will give us the max
+    // by subtracting 10 we get the first index of the round answers we need
+    let roundArray = answers.slice(round * 10 - 10);
+    roundArray.forEach(answer => {
+      if(answer[1]) currentScore += 10;
+    });
+  };
+```
+* Passing data from the child component to the parent component
+* Shuffle answers to prevent pattern matching
+```javascript
+  // helper methods
+  // shuffling the array
+  for(let i = array.length - 1; i > 0; i--){
+    const j = Math.floor(Math.random() * (i + 1));
+    swapElements(i, j, array);
+  }
+  return array;
+
+  // generates a shuffled array after the incorrect and correct data is combined
+  const answers = incorrect.slice();
+  answers.push(correct);
+  return shuffleArray(answers);
+```
+
 # Known Issues
 * Container resizing issue for smaller screen at the end of the round
 * Final score doesn't calculate the last answer
