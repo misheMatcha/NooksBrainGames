@@ -4,7 +4,7 @@ Nooks Brain Games is a simple trivia application.
 ![Screen Shot 2020-11-01 at 5 37 28 PM](https://user-images.githubusercontent.com/52799217/97821914-eccd8300-1c68-11eb-8002-c6b13f421dea.png)
 
 # Getting Started
-To get started, open the client folder and run _**yarn start**_. Then in your browser open http://localhost:3000 to view Nooks Brain Games.
+To get started, clone the repo onto your computer. Open the client folder and run _**yarn start**_. Then in your browser open http://localhost:3000 to view Nooks Brain Games.
 
 # Highlights
 * Calculate the current rounds score by taking a specific section of an array
