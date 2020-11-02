@@ -1,5 +1,5 @@
 # Nooks Brain Games
-Nooks Brain Games is a simple trivia application.
+Nooks Brain Games is a simple trivia application created with React and Javascript.
 
 ![Screen Shot 2020-11-01 at 5 37 28 PM](https://user-images.githubusercontent.com/52799217/97821914-eccd8300-1c68-11eb-8002-c6b13f421dea.png)
 
